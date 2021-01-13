@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Access_Class_101"
+    android:background="#e6ffff">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="#0040ff">
+
+            <ImageButton
+                android:id="@+id/accessclass101MenuButton"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@drawable/ic_menu"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:background="#0040ff">
+            </ImageButton>
+            <TextView
+                android:layout_width="300dp"
+                android:layout_height="match_parent"
+                android:text="   Class Room - 101"
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:textSize="30dp"
+                android:gravity="center_vertical">
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:background="#0040ff"
+            android:orientation="horizontal"
+            android:layout_marginBottom="-30dp">
+
+            <LinearLayout
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/accessClass101userView"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:gravity="center"
+                    android:text="SaaD Ibne Jamal"
+                    android:textColor="#ffffff"
+                    android:textSize="35dp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="30dp">
+                </TextView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="As"
+                    android:textColor="#ffffff"
+                    android:gravity="center"
+                    android:textSize="18dp"
+                    android:textStyle="bold">
+                </TextView>
+                <TextView
+                    android:id="@+id/accessClass101StatusView"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:text="Student"
+                    android:textColor="#ffffff"
+                    android:textStyle="bold"
+                    android:textSize="25dp"
+                    android:layout_marginLeft="5dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="70dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/saad">
+                </ImageView>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="10dp">
+
+            <LinearLayout
+                android:layout_width="150dp"
+                android:layout_height="130dp"
+                android:background="@drawable/accessclass101status"
+                android:orientation="vertical"
+                android:layout_marginRight="20dp"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="7dp"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/fan"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerInside"
+                        android:layout_marginBottom="5dp"/>
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/accessClassButton1"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="On"
+                    android:background="@drawable/accessclass101onoffbutton"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="150dp"
+                android:layout_height="130dp"
+                android:background="@drawable/accessroomlayout"
+                android:orientation="vertical"
+                android:layout_marginLeft="20dp"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="7dp"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/light"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerInside"
+                        android:layout_marginBottom="5dp"/>
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/accessClassButton2"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="Off"
+                    android:background="@drawable/accessclass101onoffbutton"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="150dp"
+                android:layout_height="130dp"
+                android:background="@drawable/accessroomlayout"
+                android:orientation="vertical"
+                android:layout_marginRight="20dp"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="7dp"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/light"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerInside"/>
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/accessClassButton3"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="Off"
+                    android:background="@drawable/accessclass101onoffbutton"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="150dp"
+                android:layout_height="130dp"
+                android:background="@drawable/accessroomlayout"
+                android:orientation="vertical"
+                android:layout_marginLeft="20dp"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="7dp"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/fan"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerInside"/>
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/accessClassButton4"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="On"
+                    android:background="@drawable/accessclass101onoffbutton"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="150dp"
+            android:layout_height="130dp"
+            android:background="@drawable/accessroomlayout"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="7dp"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/fan"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerInside"/>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/accessClassButton5"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/accessclass101onoffbutton"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/logoutaccess101"
+            android:layout_width="150dp"
+            android:layout_height="70dp"
+            android:text="Log Out"
+            android:textAllCaps="false"
+            android:background="@drawable/loginbutton"
+            android:textColor="#ffffff"
+            android:textSize="18dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="10dp">
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

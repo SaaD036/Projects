@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="20dp"
+    android:background="@drawable/view_class_user_id"
+    android:gravity="center">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/requestMailText"
+            android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:textColor="#3479bf"
+            android:textSize="17dp"
+            android:gravity="center"
+            android:background="@drawable/input_field_back"
+            android:layout_marginRight="15dp">
+        </TextView>
+        <TextView
+            android:id="@+id/requestPhoneText"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:textColor="#3479bf"
+            android:textSize="17dp"
+            android:gravity="center"
+            android:background="@drawable/input_field_back"
+            android:layout_marginLeft="15dp">
+        </TextView>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/requestUserText"
+        android:layout_width="310dp"
+        android:layout_height="45dp"
+        android:textColor="#141414"
+        android:textSize="17dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:background="@drawable/view_class_user_id">
+    </TextView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:layout_marginTop="5dp">
+        <Button
+            android:id="@+id/requestedApproveButton"
+            android:layout_width="110dp"
+            android:layout_height="45dp"
+            android:text="Approve"
+            android:background="#525453"
+            android:textColor="#f0f2f1"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            android:textSize="17dp"
+            android:layout_marginRight="30dp">
+        </Button>
+        <Button
+            android:id="@+id/requestedDeleteButton"
+            android:layout_width="110dp"
+            android:layout_height="45dp"
+            android:text="Delete"
+            android:background="#525453"
+            android:textColor="#f0f2f1"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            android:textSize="17dp"
+            android:layout_marginLeft="30dp">
+        </Button>
+    </LinearLayout>
+
+
+</LinearLayout>

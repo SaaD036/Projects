@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Menu"
+    android:orientation="vertical"
+    android:background="#ffffff">
+
+    <ImageView
+        android:id="@+id/menupagePropicImageView"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/saad"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop">
+    </ImageView>
+    <TextView
+        android:id="@+id/menupageUserTextView"
+        android:layout_width="250dp"
+        android:layout_height="45dp"
+        android:layout_gravity="center"
+        android:textSize="25dp"
+        android:text="SaaD Ibne Jamal"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="15dp">
+    </TextView>
+    <TextView
+        android:id="@+id/menupageStatusTextView"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:textSize="22dp"
+        android:text="Student"
+        android:gravity="center">
+    </TextView>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:src="@drawable/profile"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="10dp">
+    </ImageView>
+    <TextView
+        android:id="@+id/menupageEditprofileTextView"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:drawableLeft="@drawable/ic_profile"
+        android:layout_marginTop="30dp"
+        android:paddingLeft="10dp"
+
+        android:text="Edit profile"
+        android:textSize="20dp"
+        android:textColor="#080808"
+        android:background="@drawable/menupageedittext">
+    </TextView>
+    <TextView
+        android:id="@+id/menupageRequestTextView"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:text="Member request"
+        android:layout_gravity="center"
+        android:paddingLeft="10dp"
+        android:gravity="center"
+        android:drawableLeft="@drawable/ic_memberrequ"
+        android:layout_marginTop="5dp"
+        android:textSize="20dp"
+        android:textColor="#080808"
+        android:background="@drawable/menupageedittext">
+    </TextView>
+    <TextView
+        android:id="@+id/menupageGohomeTextView"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:text="Go home"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:paddingLeft="10dp"
+        android:drawableLeft="@drawable/ic_home"
+        android:layout_marginTop="5dp"
+        android:textSize="20dp"
+        android:textColor="#080808"
+        android:background="@drawable/menupageedittext">
+    </TextView>
+
+
+    <Button
+        android:id="@+id/menupageLogoutButton"
+        android:layout_width="170dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginTop="45dp"
+        android:text="Log out"
+        android:textAllCaps="false"
+        android:textSize="20dp"
+        android:paddingLeft="10dp"
+        android:textColor="#080808"
+        android:background="@drawable/menupageedittext"
+        android:drawableLeft="@drawable/ic_logout">
+    </Button>
+
+
+
+
+</LinearLayout>
