@@ -5,28 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".RequestedMemberAproval"
-    android:padding="10dp"
-    android:orientation="vertical">
+    android:padding="10dp">
 
     <ListView
         android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:divider="#1b1c1c"
+        android:dividerHeight="2dp"
         android:listSelector="#e4f2f2"
-        android:background="#ffffff">
+        android:background="#bdbfbf">
+
     </ListView>
 
-    <Button
-        android:id="@+id/requestmemberaprovalLogOutButton"
-        android:layout_width="110dp"
-        android:layout_height="60dp"
-        android:text="Log Out"
-        android:textAllCaps="false"
-        android:layout_gravity="center"
-        android:background="@drawable/loginbutton"
-        android:textColor="#ffffff"
-        android:layout_marginTop="10dp"
-        android:textSize="19dp">
-    </Button>
 </LinearLayout>
 

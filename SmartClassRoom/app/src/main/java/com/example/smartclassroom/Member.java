@@ -1,7 +1,7 @@
 package com.example.smartclassroom;
 
 public class Member {
-    private String email, user, status, pass, room, imageName, imageUri;
+    private String email, user, status, pass, room;
 
     Member() {}
 
@@ -15,18 +15,12 @@ public class Member {
     }
     public String getStatus() { return status; }
     public String getPass() { return pass; }
+
     public String getRoom() {
         return room;
     }
-    /*public String getImageName() {
-        return imageName;
-    }
-    public String getImageUri() {
-        return imageUri;
-    }*/
-
-
     //Setter method
+
     public void setEmail(String email) {
         this.email = email;
     }
@@ -35,13 +29,8 @@ public class Member {
     }
     public void setStatus(String status) { this.status = status; }
     public void setPass(String pass) { this.pass = pass; }
+
     public void setRoom(String room) {
         this.room = room;
     }
-    /*public void setImageName(String imageName) {
-        this.imageName = imageName;
-    }
-    public void setImageUri(String imageUri) {
-        this.imageUri = imageUri;
-    }*/
 }

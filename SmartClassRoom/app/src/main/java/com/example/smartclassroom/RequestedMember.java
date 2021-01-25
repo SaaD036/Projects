@@ -1,7 +1,7 @@
 package com.example.smartclassroom;
 
 public class RequestedMember {
-    private String email, user, status, pass,  room="";
+    private String email, user, status, pass,  room;
 
     RequestedMember() {}
 

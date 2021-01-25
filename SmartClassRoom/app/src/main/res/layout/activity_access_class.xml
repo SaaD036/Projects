@@ -1,261 +1,137 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AccessClass"
     android:orientation="vertical"
-    android:background="#e6ffff">
+    android:layout_margin="20dp"
+    android:background="#b2cbed">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-        
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:background="#0040ff"
-            android:orientation="horizontal">
+        android:layout_height="145dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@drawable/view_class">
 
-            <ImageButton
-                android:id="@+id/accessclassMenuButton"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:src="@drawable/ic_menu"
-                android:adjustViewBounds="true"
-                android:scaleType="centerInside"
-                android:background="#0040ff">
-            </ImageButton>
-            <TextView
-                android:layout_width="300dp"
-                android:layout_height="match_parent"
-                android:gravity="center_vertical"
-                android:text="           Home"
-                android:textSize="30dp"
-                android:textColor="#ffffff"
-                android:textStyle="bold">
-            </TextView>
-        </LinearLayout>
+        <TextView
+            android:id="@+id/accessClassUserView"
+            android:layout_width="300dp"
+            android:layout_height="70dp"
+            android:gravity="center"
+            android:textColor="#290606"
+            android:textStyle="bold"
+            android:textSize="25dp"
+            android:text="Hi"/>
+        <TextView
+            android:layout_width="350dp"
+            android:layout_height="5dp"
+            android:background="#F6E9E9"/>
+        <TextView
+            android:id="@+id/accessClassStatusView"
+            android:layout_width="300dp"
+            android:layout_height="70dp"
+            android:gravity="center"
+            android:textColor="#290606"
+            android:textStyle="bold"
+            android:textSize="25dp"
+            android:text="Hallow"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="350dp"
-            android:background="#0040ff"
-            android:orientation="horizontal"
-            android:layout_marginBottom="-50dp">
-
-            <LinearLayout
-                android:layout_width="200dp"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-                <TextView
-                    android:id="@+id/accessClassUserView"
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:textColor="#ffffff"
-                    android:gravity="center"
-                    android:text="SaaD Ibne Jamal"
-                    android:textSize="35dp"
-                    android:textStyle="bold"
-                    android:layout_marginTop="30dp">
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:text="As"
-                    android:textColor="#ffffff"
-                    android:gravity="center"
-                    android:textSize="18dp"
-                    android:textStyle="bold">
-                </TextView>
-                <TextView
-                    android:id="@+id/accessClassStatusView"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:gravity="center"
-                    android:text="Student"
-                    android:textColor="#ffffff"
-                    android:textStyle="bold"
-                    android:textSize="25dp"
-                    android:layout_marginLeft="5dp"/>
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="200dp"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/accessClassTimeView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:layout_gravity="center"
-                    android:textColor="#ffffff"
-                    android:textSize="25dp"
-                    android:textStyle="bold">
-                </TextView>
-
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:gravity="center">
-
-            <LinearLayout
-                android:layout_width="150dp"
-                android:layout_height="130dp"
-                android:background="@drawable/accessroomlayout"
-                android:orientation="vertical"
-                android:layout_marginRight="20dp">
-
-                <TextView
-                    android:id="@+id/aceesclassroom101TextView_1"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:gravity="center"
-                    android:text="Room-102"
-                    android:textSize="20dp"
-                    android:textColor="#003d99">
-                </TextView>
-                <TextView android:id="@+id/aceesclassroom101TextView_2"
-                    android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    android:gravity="center"
-                    android:textSize="17dp"
-                    android:text="2 equipments\nswitched on">
-                </TextView>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="150dp"
-                android:layout_height="130dp"
-                android:background="@drawable/accessroomlayout"
-                android:orientation="vertical"
-                android:layout_marginLeft="20dp">
-
-                <TextView
-                    android:id="@+id/aceesclassroom101TextView_3"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:gravity="center"
-                    android:text="Room-102"
-                    android:textSize="20dp"
-                    android:textColor="#003d99">
-                </TextView>
-                <TextView
-                    android:id="@+id/aceesclassroom101TextView_4"
-                    android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    android:gravity="center"
-                    android:textSize="17dp"
-                    android:text="2 equipments\nswitched on">
-                </TextView>
-            </LinearLayout>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:gravity="center">
-
-            <LinearLayout
-                android:layout_width="150dp"
-                android:layout_height="130dp"
-                android:background="@drawable/accessroomlayout"
-                android:orientation="vertical"
-                android:layout_marginRight="20dp">
-
-                <TextView
-                    android:id="@+id/aceesclassroom101TextView_5"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:gravity="center"
-                    android:text="Room-103"
-                    android:textSize="20dp"
-                    android:textColor="#003d99">
-                </TextView>
-                <TextView
-                    android:id="@+id/aceesclassroom101TextView_6"
-                    android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    android:gravity="center"
-                    android:textSize="17dp"
-                    android:text="1 equipments\nswitched on">
-                </TextView>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="150dp"
-                android:layout_height="130dp"
-                android:background="@drawable/accessroomlayout"
-                android:orientation="vertical"
-                android:layout_marginLeft="20dp">
-
-                <TextView
-                    android:id="@+id/aceesclassroom101TextView_7"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:gravity="center"
-                    android:text="Room-104"
-                    android:textSize="20dp"
-                    android:textColor="#003d99">
-                </TextView>
-                <TextView
-                    android:id="@+id/aceesclassroom101TextView_8"
-                    android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    android:gravity="center"
-                    android:textSize="17dp"
-                    android:text="No equipment\nswitched on">
-                </TextView>
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:gravity="center">
-
-        <LinearLayout
-            android:layout_width="150dp"
-            android:layout_height="130dp"
-            android:background="@drawable/accessroomlayout"
-            android:orientation="vertical"
-            android:layout_marginRight="20dp">
-
-            <TextView
-                android:id="@+id/aceesclassroom101TextView_9"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:gravity="center"
-                android:text="Room-105"
-                android:textSize="20dp"
-                android:textColor="#003d99">
-            </TextView>
-            <TextView android:id="@+id/aceesclassroom101TextView_10"
-                android:layout_width="match_parent"
-                android:layout_height="70dp">
-            </TextView>
-        </LinearLayout>
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:background="#708db5"
+        android:layout_margin="10dp">
+        <Button
+            android:id="@+id/accessClassButton101"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="Room 101"
+            android:textColor="#323436"
+            android:textStyle="bold"
+            android:textSize="23dp"
+            android:textAllCaps="false"
+            android:background="@drawable/view_class_text_view"
+            android:layout_marginBottom="10dp"/>
+        <TextView
+            android:layout_width="340dp"
+            android:layout_height="3dp"
+            android:background="#DAD8DF"/>
+        <Button
+            android:id="@+id/accessClassButton102"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="Room 101"
+            android:textColor="#323436"
+            android:textStyle="bold"
+            android:textSize="23dp"
+            android:textAllCaps="false"
+            android:background="@drawable/view_class_text_view"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"/>
+        <TextView
+            android:layout_width="340dp"
+            android:layout_height="3dp"
+            android:background="#DAD8DF"/>
+        <Button
+            android:id="@+id/accessClassButton103"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="Room 101"
+            android:textColor="#323436"
+            android:textStyle="bold"
+            android:textSize="23dp"
+            android:textAllCaps="false"
+            android:background="@drawable/view_class_text_view"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"/>
+        <TextView
+            android:layout_width="340dp"
+            android:layout_height="3dp"
+            android:background="#DAD8DF"/>
+        <Button
+            android:id="@+id/accessClassButton104"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="Room 101"
+            android:textColor="#323436"
+            android:textStyle="bold"
+            android:textSize="23dp"
+            android:textAllCaps="false"
+            android:background="@drawable/view_class_text_view"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center">
 
         <Button
             android:id="@+id/accessClassLogout"
-            android:layout_width="200dp"
-            android:layout_height="50dp"
+            android:layout_width="250dp"
+            android:layout_height="70dp"
             android:text="Log Out"
             android:textAllCaps="false"
-            android:textSize="20dp"
+            android:textSize="30dp"
             android:textColor="#ffffff"
             android:shadowColor="#1B1921"
-            android:background="@drawable/loginbutton"
-            android:layout_gravity="center"/>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="10dp">
-        </LinearLayout>
+            android:background="@drawable/loginbutton"/>
+
     </LinearLayout>
-</ScrollView>
+
+</LinearLayout>

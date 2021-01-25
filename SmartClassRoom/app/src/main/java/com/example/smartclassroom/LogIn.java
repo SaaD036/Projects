@@ -20,11 +20,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LogIn extends AppCompatActivity {
-    private EditText email, password;
+    private EditText email, pass;
     private Button login, signup;
     private TextView forgotPass;
     private DatabaseReference reff;
-    private String mail, pass, user, stat, room;
+    private String mail, password;
+    private String username, mist_id, status;
     private Long key;
     private List<Member> memberList;
 
@@ -59,55 +60,81 @@ public class LogIn extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 mail = email.getText().toString();
-                pass = password.getText().toString();
+                password = pass.getText().toString();
                 int sizee = memberList.size(), flag = 0;
 
                 for (int i = 0; i < sizee; i++) {
+
                     if (memberList.get(i).getEmail().equals(mail)) {
-                        if (memberList.get(i).getPass().equals(pass)) {
-                            user = memberList.get(i).getUser();
-                            stat = memberList.get(i).getStatus();
-                            room = memberList.get(i).getRoom();
+
+                        if (memberList.get(i).getPass().equals(password)) {
+                            username = memberList.get(i).getUser();
+                            mist_id = memberList.get(i).getStatus();
 
                             flag = 2;
+                        } else {
+                            flag = 1;
                         }
-                        else { flag = 1; }
                         break;
                     }
                 }
 
                 if (flag == 0) {
                     Toast.makeText(LogIn.this, "No account", Toast.LENGTH_LONG).show();
-                }
+                } else if (flag == 1) {
+                    /*if (mist_id.equals("Student")) {
+                        firebaseAuth.signInWithEmailAndPassword(mail, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if (task.isSuccessful()) {
+                                    Intent intent = new Intent(MainActivity.this, ViewClass.class);
 
-                else if (flag == 1) {
-                    Toast.makeText(LogIn.this, "Wrong Password", Toast.LENGTH_LONG).show();
-                }
+                                    intent.putExtra("username", username);
+                                    intent.putExtra("status", mist_id);
 
-                else if (flag == 2) {
-                    if (stat.equals("Teacher")) {
-                        Intent intent = new Intent(LogIn.this, AccessClass.class);
-
-                        intent.putExtra("user", user);
-                        intent.putExtra("stat", stat);
-                        intent.putExtra("mail", mail);
-                        intent.putExtra("pass", pass);
-                        intent.putExtra("room", room);
-
-                        startActivity(intent);
+                                    startActivity(intent);
+                                }
+                                else{
+                                    Toast.makeText(MainActivity.this, "Wrong password", Toast.LENGTH_LONG).show();
+                                }
+                            }
+                        });
                     }
                     else{
+                        firebaseAuth.signInWithEmailAndPassword(mail, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if(task.isSuccessful()){
+                                    Intent intent = new Intent(MainActivity.this, AccessClass.class);
+
+                                    intent.putExtra("username", username);
+                                    intent.putExtra("status", mist_id);
+
+                                    startActivity(intent);
+                                }
+                            }
+                        });
+                    }*/
+                    Toast.makeText(LogIn.this, "Wrong Password", Toast.LENGTH_LONG).show();
+                    //Toast.makeText(MainActivity.this, "Logging in as "+username, Toast.LENGTH_LONG).show();
+                } else if (flag == 2) {
+                    if (mist_id.equals("Student")) {
                         Intent intent = new Intent(LogIn.this, ViewClass.class);
 
-                        intent.putExtra("user", user);
-                        intent.putExtra("stat", stat);
-                        intent.putExtra("mail", mail);
-                        intent.putExtra("pass", pass);
-                        intent.putExtra("room", room);
+                        intent.putExtra("username", username);
+                        intent.putExtra("status", mist_id);
+
+                        startActivity(intent);
+                    } else {
+                        Intent intent = new Intent(LogIn.this, AccessClass.class);
+
+                        intent.putExtra("username", username);
+                        intent.putExtra("status", mist_id);
 
                         startActivity(intent);
                     }
                 }
+                //Toast.makeText(MainActivity.this, key+" "+memberList.size(), Toast.LENGTH_LONG).show();
             }
         });
 
@@ -123,7 +150,7 @@ public class LogIn extends AppCompatActivity {
         forgotPass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LogIn.this, Forgot_Pass.class);
+                Intent intent = new Intent(LogIn.this, RequestedMemberAproval.class);
                 startActivity(intent);
             }
         });
@@ -132,7 +159,7 @@ public class LogIn extends AppCompatActivity {
     private void initComp() {
         //Initializing EditText
         email = (EditText)findViewById(R.id.emailText);
-        password = (EditText)findViewById(R.id.passwordText);
+        pass = (EditText)findViewById(R.id.passwordText);
 
         forgotPass = (TextView) findViewById(R.id.mainActivityForgotPassword);
 
