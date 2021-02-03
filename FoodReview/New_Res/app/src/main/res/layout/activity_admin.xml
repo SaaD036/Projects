@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Admin"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="#000000">
+    
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:src="@mipmap/login_cover"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop">
+    </ImageView>
+
+    <Button
+        android:id="@+id/admin_approvalList"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:background="@drawable/login_button"
+
+        android:text="Go to aprroval list"
+        android:textAllCaps="false"
+        android:textSize="15dp"
+        android:textColor="#ffffff">
+    </Button>
+
+
+
+</LinearLayout>

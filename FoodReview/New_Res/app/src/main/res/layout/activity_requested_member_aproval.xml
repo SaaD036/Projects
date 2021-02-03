@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RequestedMemberAproval"
+    android:background="#000000"
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:src="@mipmap/request_member_aproval"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        android:layout_gravity="top">
+    </ImageView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:layout_gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-20dp"
+            android:layout_marginRight="-15dp"
+
+            android:text="Admin"
+            android:textSize="17dp"
+            android:textColor="#ffffff"
+            android:textStyle="bold">
+        </TextView>
+        <ImageView
+            android:layout_width="105dp"
+            android:layout_height="85dp"
+            android:src="@mipmap/admin">
+        </ImageView>
+        <LinearLayout
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/requestedMemberAproval_userImage"
+                android:layout_width="75dp"
+                android:layout_height="60dp">
+            </ImageView>
+            <TextView
+                android:id="@+id/requestedMemberAproval_usernameText"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:background="#000000"
+
+                android:textSize="16dp"
+                android:textColor="#040BFA">
+            </TextView>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="25dp"
+
+        android:text="Request list"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:textSize="18dp">
+    </TextView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:padding="1dp"
+        android:gravity="center_horizontal"
+        android:background="#ffffff">
+
+        <ListView
+            android:id="@+id/requestedMemberAproval_listview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:dividerHeight="1dp"
+            android:divider="#ffffff"
+            android:background="@drawable/memberapproval_listview">
+        </ListView>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/admin_logoutButton"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:background="@drawable/login_button"
+
+            android:text="Log out"
+            android:textAllCaps="false"
+            android:textColor="#ffffff"
+            android:textSize="16dp">
+        </Button>
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="10dp"></TextView>
+        <Button
+            android:id="@+id/admin_gotouserButton"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:background="@drawable/login_button"
+
+            android:text="Go to user mode"
+            android:textAllCaps="false"
+            android:textColor="#ffffff"
+            android:textSize="16dp">
+        </Button>
+
+    </LinearLayout>
+</LinearLayout>

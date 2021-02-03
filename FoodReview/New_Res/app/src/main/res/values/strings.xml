@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">JPres</string>
+    <string-array name="user_type">
+        <item>Admin</item>
+        <item>Owner</item>
+        <item>User</item>
+    </string-array>
+</resources>

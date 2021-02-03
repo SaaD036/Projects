@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:orientation="vertical"
+    android:paddingBottom="10dp">
+
+    <TextView
+        android:id="@+id/everymember_emailText"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:drawableRight="@drawable/email"
+        android:paddingRight="25dp"
+
+        android:textColor="#040BFA"
+        android:textSize="16dp"
+        android:textStyle="bold">
+    </TextView>
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="2dp"
+        android:layout_gravity="center_horizontal"
+        android:background="#040BFA">
+    </LinearLayout>
+    <TextView
+        android:id="@+id/everymember_usernameText"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:drawableRight="@drawable/user"
+        android:paddingRight="25dp"
+
+        android:textColor="#040BFA"
+        android:textSize="16dp"
+        android:textStyle="bold">
+    </TextView>
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="2dp"
+        android:layout_gravity="center_horizontal"
+        android:background="#040BFA">
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/everymember_typeText"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+
+            android:textColor="#040BFA"
+            android:textSize="16dp"
+            android:textStyle="bold">
+        </TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:layout_marginLeft="10dp"
+
+            android:text="Wanna edit...tap"
+            android:textColor="#ffffff"
+            android:textSize="15dp">
+        </TextView>
+        <Spinner
+            android:id="@+id/everymember_typeSpinner"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/login_box">
+        </Spinner>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/everymember_deleteButton"
+            android:layout_width="100dp"
+            android:layout_height="45dp"
+            android:background="@drawable/login_button"
+            android:layout_marginRight="30dp"
+
+            android:text="Delete"
+            android:textColor="#ffffff"
+            android:textAllCaps="false"
+            android:textSize="16dp">
+        </Button>
+        <Button
+            android:id="@+id/everymember_approveButton"
+            android:layout_width="100dp"
+            android:layout_height="45dp"
+            android:background="@drawable/login_button"
+            android:layout_marginLeft="30dp"
+
+            android:text="Approve"
+            android:textColor="#ffffff"
+            android:textAllCaps="false"
+            android:textSize="16dp">
+        </Button>
+
+    </LinearLayout>
+</LinearLayout>

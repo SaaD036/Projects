@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Owner"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="#000000">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:src="@mipmap/owner_cover">
+    </ImageView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="90dp"
+            android:layout_height="80dp"></ImageView>
+        <TextView
+            android:id="@+id/owner_usernameText"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="20dp"
+            android:gravity="center"
+
+            android:textSize="17dp"
+            android:textStyle="bold"
+            android:textColor="#ffffff">
+        </TextView>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/owner_addRestaurantText"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:background="@drawable/owner_textview_edit"
+        android:drawableLeft="@drawable/restaurant"
+        android:paddingLeft="5dp"
+        android:drawablePadding="-25dp"
+        android:layout_marginTop="20dp"
+
+        android:text="Add restaurant"
+        android:textColor="#ffffff"
+        android:textSize="15dp">
+    </TextView>
+    <TextView
+        android:id="@+id/owner_addItemText"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:background="@drawable/owner_textview_edit"
+        android:layout_marginTop="10dp"
+        android:drawableLeft="@drawable/item"
+        android:paddingLeft="5dp"
+        android:drawablePadding="-30dp"
+
+        android:text="Add Item"
+        android:textColor="#ffffff"
+        android:textSize="15dp">
+    </TextView>
+    <TextView
+        android:id="@+id/owner_editProfileText"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:background="@drawable/owner_textview_edit"
+        android:layout_marginTop="10dp"
+        android:drawableLeft="@drawable/user"
+        android:paddingLeft="5dp"
+        android:drawablePadding="-30dp"
+
+        android:text="Edit profile"
+        android:textColor="#ffffff"
+        android:textSize="15dp">
+    </TextView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/owner_logoutButton"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:background="@drawable/login_button"
+
+            android:text="Log out"
+            android:textAllCaps="false"
+            android:textColor="#ffffff"
+            android:textSize="16dp">
+        </Button>
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="10dp"></TextView>
+        <Button
+            android:id="@+id/owner_gotouserButton"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:background="@drawable/login_button"
+
+            android:text="Go to user mode"
+            android:textAllCaps="false"
+            android:textColor="#ffffff"
+            android:textSize="16dp">
+        </Button>
+
+    </LinearLayout>
+</LinearLayout>
