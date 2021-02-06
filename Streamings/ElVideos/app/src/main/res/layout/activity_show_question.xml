@@ -9,7 +9,7 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="150dp"
         android:src="@mipmap/quiz"
         android:background="#fff">
     </ImageView>
@@ -17,7 +17,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginTop="50dp">
 
         <TextView
             android:id="@+id/showQuestion_quesText"
@@ -25,6 +26,7 @@
             android:layout_height="wrap_content"
             android:padding="15dp"
             android:gravity="center"
+            android:visibility="gone"
 
             android:textSize="22dp"
             android:textStyle="bold"
@@ -39,6 +41,8 @@
             android:layout_marginRight="15dp"
             android:layout_marginBottom="5dp"
             android:background="@drawable/input"
+            android:enabled="false"
+            android:visibility="gone"
 
             android:textColor="#000"
             android:textSize="16dp"
@@ -52,6 +56,8 @@
             android:layout_marginRight="15dp"
             android:layout_marginBottom="5dp"
             android:background="@drawable/input"
+            android:enabled="false"
+            android:visibility="gone"
 
             android:textColor="#000"
             android:textSize="16dp"
@@ -65,6 +71,8 @@
             android:layout_marginRight="15dp"
             android:layout_marginBottom="5dp"
             android:background="@drawable/input"
+            android:enabled="false"
+            android:visibility="gone"
 
             android:textColor="#000"
             android:textSize="16dp"
@@ -78,47 +86,28 @@
             android:layout_marginRight="15dp"
             android:layout_marginBottom="5dp"
             android:background="@drawable/input"
+            android:enabled="false"
+            android:visibility="gone"
 
             android:textColor="#000"
             android:textSize="16dp"
             android:textAllCaps="false">
         </Button>
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/showQuestion_statText"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
+            android:paddingRight="15dp"
             android:paddingLeft="15dp"
-            android:paddingRight="15dp">
+            android:layout_height="wrap_content"
+            android:layout_weight="70"
+            android:padding="15dp"
+            android:gravity="center"
+            android:visibility="gone"
 
-            <Button
-                android:id="@+id/showQuestion_backButton"
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_weight="15"
-                android:background="@drawable/back"
-                android:enabled="false">
-            </Button>
-            <TextView
-                android:id="@+id/showQuestion_statText"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="70"
-                android:padding="15dp"
-                android:gravity="center"
-
-                android:textSize="17dp"
-                android:textColor="#000">
-            </TextView>
-            <Button
-                android:id="@+id/showQuestion_forwardButton"
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_weight="15"
-                android:background="@drawable/forward"
-                android:enabled="false">
-            </Button>
-        </LinearLayout>
+            android:textSize="17dp"
+            android:textColor="#000">
+        </TextView>
 
     </LinearLayout>
 

@@ -5,11 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.provider.ContactsContract;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,13 +29,14 @@ import java.util.List;
 
 public class ShowQuestion extends AppCompatActivity {
     private TextView ques, stat;
-    private Button op1, op2, op3, op4, back, forward;
+    private Button op1, op2, op3, op4;
     private ListView listView;
     private DatabaseReference databaseReference;
     private List<Question> questionList;
     private ShowAllQuestion showAllQuestion;
-    private int i;
+    private int i, mark;
     private String answer;
+    private boolean flag;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,83 +45,37 @@ public class ShowQuestion extends AppCompatActivity {
 
         initComp();
         i=0;
+        mark=0;
+        flag = true;
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Question question = questionList.get(i);
+                if(flag){
+                    Question question = questionList.get(i);
 
-                ques.setText(question.getQuestion());
-                op1.setText(question.getOption1());
-                op2.setText(question.getOption2());
-                op3.setText(question.getOption3());
-                op4.setText(question.getOption4());
-                answer = question.getAnswer();
+                    ques.setText(question.getQuestion());
+                    op1.setText(question.getOption1());
+                    op2.setText(question.getOption2());
+                    op3.setText(question.getOption3());
+                    op4.setText(question.getOption4());
+                    answer = question.getAnswer();
 
-                back.setEnabled(true);
-                forward.setEnabled(true);
+                    ques.setVisibility(View.VISIBLE);
+                    stat.setVisibility(View.VISIBLE);
+                    op1.setVisibility(View.VISIBLE);
+                    op2.setVisibility(View.VISIBLE);
+                    op3.setVisibility(View.VISIBLE);
+                    op4.setVisibility(View.VISIBLE);
 
-//                Intent intent = new Intent(ShowQuestion.this, QuizPage.class);
-//
-//                intent.putExtra("q", question.getQuestion());
-//                intent.putExtra("a", question.getAnswer());
-//                intent.putExtra("o1", question.getOption1());
-//                intent.putExtra("o2", question.getOption2());
-//                intent.putExtra("o3", question.getOption3());
-//                intent.putExtra("o4", question.getOption4());
-//
-//                startActivity(intent);
+                    op1.setEnabled(true);
+                    op2.setEnabled(true);
+                    op3.setEnabled(true);
+                    op4.setEnabled(true);
 
-                //Toast.makeText(ShowQuestion.this, ""+questionList.size(), Toast.LENGTH_LONG).show();
-            }
-        });
-
-        forward.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                i = i+1;
-
-                if(i==questionList.size()){
-                    i=0;
+                    flag=false;
+                    listView.setVisibility(View.GONE);
                 }
-
-                Question question = questionList.get(i);
-
-                ques.setText(question.getQuestion());
-                op1.setText(question.getOption1());
-                op2.setText(question.getOption2());
-                op3.setText(question.getOption3());
-                op4.setText(question.getOption4());
-                answer = question.getAnswer();
-
-                op1.setBackgroundResource(R.drawable.input);
-                op2.setBackgroundResource(R.drawable.input);
-                op3.setBackgroundResource(R.drawable.input);
-                op4.setBackgroundResource(R.drawable.input);
-            }
-        });
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                i = i-1;
-
-                if(i==-1){
-                    i=questionList.size()-1;
-                }
-
-                Question question = questionList.get(i);
-
-                ques.setText(question.getQuestion());
-                op1.setText(question.getOption1());
-                op2.setText(question.getOption2());
-                op3.setText(question.getOption3());
-                op4.setText(question.getOption4());
-                answer = question.getAnswer();
-
-                op1.setBackgroundResource(R.drawable.input);
-                op2.setBackgroundResource(R.drawable.input);
-                op3.setBackgroundResource(R.drawable.input);
-                op4.setBackgroundResource(R.drawable.input);
             }
         });
 
@@ -127,7 +85,8 @@ public class ShowQuestion extends AppCompatActivity {
                 String tmp = op1.getText().toString().trim();
 
                 if(answer.equals(tmp)){
-                    stat.setText("Ok");
+                    stat.setText("Correct");
+                    mark++;
 
                     op1.setBackgroundResource(R.drawable.button_right);
                     op2.setBackgroundResource(R.drawable.input);
@@ -136,12 +95,14 @@ public class ShowQuestion extends AppCompatActivity {
                 }
                 else{
                     op1.setBackgroundResource(R.drawable.button_wrong);
-                    stat.setText(answer);
+                    stat.setText("Correct answer : "+answer);
 
                     op2.setBackgroundResource(R.drawable.input);
                     op3.setBackgroundResource(R.drawable.input);
                     op4.setBackgroundResource(R.drawable.input);
                 }
+
+                loadQuiz();
             }
         });
         op2.setOnClickListener(new View.OnClickListener() {
@@ -150,7 +111,8 @@ public class ShowQuestion extends AppCompatActivity {
                 String tmp = op2.getText().toString().trim();
 
                 if(answer.equals(tmp)){
-                    stat.setText("Ok");
+                    stat.setText("Correct");
+                    mark++;
 
                     op1.setBackgroundResource(R.drawable.input);
                     op2.setBackgroundResource(R.drawable.button_right);
@@ -159,12 +121,14 @@ public class ShowQuestion extends AppCompatActivity {
                 }
                 else{
                     op2.setBackgroundResource(R.drawable.button_wrong);
-                    stat.setText(answer);
+                    stat.setText("Correct answer : "+answer);
 
                     op1.setBackgroundResource(R.drawable.input);
                     op3.setBackgroundResource(R.drawable.input);
                     op4.setBackgroundResource(R.drawable.input);
                 }
+
+                loadQuiz();
             }
         });
         op3.setOnClickListener(new View.OnClickListener() {
@@ -173,7 +137,8 @@ public class ShowQuestion extends AppCompatActivity {
                 String tmp = op3.getText().toString().trim();
 
                 if(answer.equals(tmp)){
-                    stat.setText("Ok");
+                    stat.setText("Correct");
+                    mark++;
 
                     op1.setBackgroundResource(R.drawable.input);
                     op2.setBackgroundResource(R.drawable.input);
@@ -182,13 +147,14 @@ public class ShowQuestion extends AppCompatActivity {
                 }
                 else{
                     op3.setBackgroundResource(R.drawable.button_wrong);
-                    stat.setText(answer);
+                    stat.setText("Correct answer : "+answer);
 
                     op1.setBackgroundResource(R.drawable.input);
                     op2.setBackgroundResource(R.drawable.input);
                     op4.setBackgroundResource(R.drawable.input);
-
                 }
+
+                loadQuiz();
             }
         });
         op4.setOnClickListener(new View.OnClickListener() {
@@ -197,7 +163,8 @@ public class ShowQuestion extends AppCompatActivity {
                 String tmp = op4.getText().toString().trim();
 
                 if(answer.equals(tmp)){
-                    stat.setText("Ok");
+                    stat.setText("Correct");
+                    mark++;
 
                     op1.setBackgroundResource(R.drawable.input);
                     op2.setBackgroundResource(R.drawable.input);
@@ -206,12 +173,14 @@ public class ShowQuestion extends AppCompatActivity {
                 }
                 else{
                     op4.setBackgroundResource(R.drawable.button_wrong);
-                    stat.setText(answer);
+                    stat.setText("Correct answer : "+answer);
 
                     op1.setBackgroundResource(R.drawable.input);
                     op2.setBackgroundResource(R.drawable.input);
                     op3.setBackgroundResource(R.drawable.input);
                 }
+
+                loadQuiz();
             }
         });
     }
@@ -224,8 +193,6 @@ public class ShowQuestion extends AppCompatActivity {
         op2 = findViewById(R.id.showQuestion_op2Button);
         op3 = findViewById(R.id.showQuestion_op3Button);
         op4 = findViewById(R.id.showQuestion_op4Button);
-        back = findViewById(R.id.showQuestion_backButton);
-        forward = findViewById(R.id.showQuestion_forwardButton);
 
         listView = findViewById(R.id.showQues_listview);
         databaseReference = FirebaseDatabase.getInstance().getReference("Question");
@@ -248,12 +215,52 @@ public class ShowQuestion extends AppCompatActivity {
                 }
 
                 listView.setAdapter(showAllQuestion);
-
-                //Toast.makeText(ShowQuestion.this, ""+newList.size(), Toast.LENGTH_LONG).show();
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {}
         });
+    }
+
+    private void loadQuiz(){
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                i = i+1;
+
+                if(i==questionList.size()){
+                    loadResult();
+                }
+                else {
+                    Question question = questionList.get(i);
+
+                    ques.setText(question.getQuestion());
+                    op1.setText(question.getOption1());
+                    op2.setText(question.getOption2());
+                    op3.setText(question.getOption3());
+                    op4.setText(question.getOption4());
+                    answer = question.getAnswer();
+
+                    op1.setBackgroundResource(R.drawable.input);
+                    op2.setBackgroundResource(R.drawable.input);
+                    op3.setBackgroundResource(R.drawable.input);
+                    op4.setBackgroundResource(R.drawable.input);
+
+                    stat.setText("");
+                }
+            }
+        }, 5000);
+    }
+
+    private void loadResult(){
+        ques.setText("Congratutations...");
+
+        op1.setVisibility(View.GONE);
+        op2.setVisibility(View.GONE);
+        op3.setVisibility(View.GONE);
+        op4.setVisibility(View.GONE);
+
+        stat.setText("Your score is "+mark+" out of "+questionList.size());
     }
 }

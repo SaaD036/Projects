@@ -9,6 +9,13 @@
     android:orientation="vertical"
     android:gravity="center_vertical">
 
+    <ImageView
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:src="@mipmap/login"
+        android:layout_gravity="center">
+    </ImageView>
+
     <EditText
         android:id="@+id/login_emailText"
         android:layout_width="match_parent"
@@ -19,6 +26,8 @@
         android:layout_marginBottom="10dp"
         android:background="@drawable/input"
         android:gravity="center"
+        android:drawableLeft="@drawable/email"
+        android:paddingLeft="10dp"
 
         android:hint="Email or phone"
         android:textSize="16dp"
@@ -35,6 +44,9 @@
         android:layout_marginBottom="10dp"
         android:background="@drawable/input"
         android:gravity="center"
+        android:inputType="textPassword"
+        android:drawableLeft="@drawable/password"
+        android:paddingLeft="5dp"
 
         android:hint="Password"
         android:textSize="16dp"

@@ -93,17 +93,4 @@
         android:textColor="#fff">>
     </Button>
 
-    <Button
-        android:id="@+id/goto_imageButton"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
-        android:background="@drawable/button"
-
-        android:text="Go to image section"
-        android:textAllCaps="false"
-        android:textColor="#fff">>
-    </Button>
-
 </LinearLayout>

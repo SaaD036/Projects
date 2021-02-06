@@ -76,17 +76,4 @@
         android:textAllCaps="false">
     </Button>
 
-    <Button
-        android:id="@+id/goto_videoButton"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
-        android:background="@drawable/button"
-
-        android:text="Go to text section"
-        android:textColor="#fff"
-        android:textAllCaps="false">
-    </Button>
-
 </LinearLayout>

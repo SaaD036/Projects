@@ -30,7 +30,7 @@ import java.io.IOException;
 
 public class AudioUpload extends AppCompatActivity {
     private static final int PICK_AUDIO=1;
-    private Button show, choose, upload, go, play;
+    private Button show, choose, upload, play;
     private TextView playText;
     private EditText nameText;
     private Uri audioUri;
@@ -57,13 +57,7 @@ public class AudioUpload extends AppCompatActivity {
                 uploadAudio();;
             }
         });
-        go.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(AudioUpload.this, QuestionUpload.class);
-                startActivity(intent);
-            }
-        });
+
         play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -90,7 +84,6 @@ public class AudioUpload extends AppCompatActivity {
         show = findViewById(R.id.audioUpload_listenButton);
         choose = findViewById(R.id.audioUpload_chooseButton);
         upload = findViewById(R.id.audioUpload_uploadButton);
-        go = findViewById(R.id.audioUpload_goButton);
         nameText = findViewById(R.id.audioUpload_nameText);
         play = findViewById(R.id.audioUpload_playButton);
         playText = findViewById(R.id.audioUpload_playText);

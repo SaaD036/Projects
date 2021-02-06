@@ -69,7 +69,5 @@ public class ShowAudio extends AppCompatActivity {
 
             }
         });
-
-        Toast.makeText(ShowAudio.this, ""+audioInfoList.size(), Toast.LENGTH_LONG).show();
     }
 }

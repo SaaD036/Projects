@@ -31,13 +31,12 @@ import java.io.IOException;
 public class VideoUpload extends AppCompatActivity {
     private static final int PICK_VIDEO = 1;
     private VideoView uploadedVideo;
-    private Button uploadButton, chooseButton, showButton, gotoImage, statusButton;
+    private Button uploadButton, chooseButton, showButton, statusButton;
     private EditText videoNameText;
     private Uri videoURI;
     private MediaController mediaController;
     private DatabaseReference databaseReference, paid_databaseReference;
     private StorageReference storageReference;
-    private String url;
     private boolean videoType;
 
 
@@ -60,13 +59,7 @@ public class VideoUpload extends AppCompatActivity {
                 uploadVideo();
             }
         });
-        gotoImage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(VideoUpload.this, ImageUpload.class);
-                startActivity(intent);
-            }
-        });
+
         showButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -95,7 +88,6 @@ public class VideoUpload extends AppCompatActivity {
         uploadButton = findViewById(R.id.upload_videoButton);
         chooseButton = findViewById(R.id.chooseVideoButton);
         showButton = findViewById(R.id.showVideoButton);
-        gotoImage = findViewById(R.id.goto_imageButton);
         statusButton = findViewById(R.id.videoUpload_statusButton);
 
         videoNameText = findViewById(R.id.videoNameText);

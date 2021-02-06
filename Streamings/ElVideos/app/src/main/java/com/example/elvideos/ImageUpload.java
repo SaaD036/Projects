@@ -19,7 +19,7 @@ import com.google.firebase.storage.*;
 public class ImageUpload extends AppCompatActivity {
     private static final int PICK_IMAGE = 1;
     private ImageView uploadedImage;
-    private Button uploadButton, chooseButton, showButton, gotoVideo;
+    private Button uploadButton, chooseButton, showButton;
     private EditText imageNameText;
     private Uri imageURI;
     private DatabaseReference databaseReference;
@@ -44,13 +44,7 @@ public class ImageUpload extends AppCompatActivity {
                 uploadImage();;
             }
         });
-        gotoVideo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ImageUpload.this, TextUpload.class);
-                startActivity(intent);
-            }
-        });
+
         showButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,7 +61,6 @@ public class ImageUpload extends AppCompatActivity {
         chooseButton = findViewById(R.id.chooseImageButton);
         showButton = findViewById(R.id.showImageButton);
         imageNameText = findViewById(R.id.imageNameText);
-        gotoVideo = findViewById(R.id.goto_videoButton);
 
         databaseReference = FirebaseDatabase.getInstance().getReference("Image_info");
         storageReference = FirebaseStorage.getInstance().getReference("Image");

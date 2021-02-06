@@ -13,7 +13,9 @@
         android:layout_height="150dp"
         android:layout_margin="5dp"
         android:background="#000"
-        android:src="@drawable/audio">
+        android:src="@mipmap/audio"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
     </ImageView>
 
     <LinearLayout
@@ -96,19 +98,6 @@
         android:layout_marginBottom="5dp"
 
         android:text="Upload Audio"
-        android:textColor="#fff"
-        android:textAllCaps="false">
-    </Button>
-
-    <Button
-        android:id="@+id/audioUpload_goButton"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
-        android:background="@drawable/button"
-
-        android:text="Go to Quiz section"
         android:textColor="#fff"
         android:textAllCaps="false">
     </Button>

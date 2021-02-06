@@ -17,11 +17,8 @@ import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.*;
 
 public class ShowVideos extends AppCompatActivity {
-    private VideoView videoView;
     private RecyclerView recyclerView;
     private DatabaseReference databaseReference;
-    private MediaController mediaController;
-    private Long key;
     private String type;
 
     @Override
@@ -29,9 +26,8 @@ public class ShowVideos extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_videos);
         type = getIntent().getStringExtra("type");
+
         initComp();
-
-
 
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -54,7 +50,7 @@ public class ShowVideos extends AppCompatActivity {
 
             @Override
             protected void onBindViewHolder(@NonNull ShowAllVideo showAllVideo, int i, @NonNull VideoInfo videoInfo) {
-                showAllVideo.setVideo(ShowVideos.this, /*getApplication(),*/ videoInfo.getVideoName(), videoInfo.getVideoURL());
+                showAllVideo.setVideo(ShowVideos.this, videoInfo.getVideoName(), videoInfo.getVideoURL());
             }
         };
 
@@ -63,11 +59,7 @@ public class ShowVideos extends AppCompatActivity {
     }
 
     private void initComp(){
-        videoView = findViewById(R.id.showVideo_VideoView);
         recyclerView = findViewById(R.id.showVideo_RecyclerView);
-
-        mediaController = new MediaController(this);
-        videoView.setMediaController(mediaController);
 
         if(type.equals("paid")){
             databaseReference = FirebaseDatabase.getInstance().getReference("Paid_video_info");
@@ -75,6 +67,5 @@ public class ShowVideos extends AppCompatActivity {
         else{
             databaseReference = FirebaseDatabase.getInstance().getReference("Video_info");
         }
-
     }
 }

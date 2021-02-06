@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".QuizPage"></activity>
+        <activity android:name=".PremiumPassword"></activity>
+        <activity android:name=".AdminPage" />
+        <activity android:name=".QuizPage" />
         <activity android:name=".ShowQuestion" />
         <activity android:name=".QuestionUpload" />
         <activity android:name=".AudioPage" />

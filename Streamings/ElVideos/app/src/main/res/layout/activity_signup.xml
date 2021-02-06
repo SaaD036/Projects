@@ -9,6 +9,13 @@
     android:orientation="vertical"
     android:gravity="center_vertical">
 
+    <ImageView
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:src="@mipmap/login"
+        android:layout_gravity="center">
+    </ImageView>
+
     <EditText
         android:id="@+id/signup_emailText"
         android:layout_width="match_parent"
@@ -70,7 +77,7 @@
         android:gravity="center"
         android:inputType="textPassword"
 
-        android:hint="Password"
+        android:hint="Confirm assword"
         android:textSize="16dp"
         android:textColor="#1a1aff"
         android:textColorHint="#1a1aff">

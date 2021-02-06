@@ -15,7 +15,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class TextUpload extends AppCompatActivity {
     private EditText name, story;
-    private Button save, go;
+    private Button save;
     private DatabaseReference databaseReference;
 
     @Override
@@ -42,14 +42,10 @@ public class TextUpload extends AppCompatActivity {
                     databaseReference.push().setValue(textInfo);
 
                     Toast.makeText(TextUpload.this, "Story saved successfully", Toast.LENGTH_LONG).show();
+
+                    name.setText("");
+                    story.setText("");
                 }
-            }
-        });
-        go.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(TextUpload.this, AudioUpload.class);
-                startActivity(intent);
             }
         });
     }
@@ -57,7 +53,6 @@ public class TextUpload extends AppCompatActivity {
     private void initComp(){
         name = findViewById(R.id.textUpload_nameText);
         story = findViewById(R.id.textUpload_storyText);
-        go = findViewById(R.id.textUpload_goButton);
 
         save = findViewById(R.id.textUpload_saveButton);
         databaseReference = FirebaseDatabase.getInstance().getReference("TextInfo");

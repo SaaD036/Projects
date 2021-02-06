@@ -33,20 +33,6 @@ public class Login extends AppCompatActivity {
 
         initComp();
 
-        p.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                k = dataSnapshot.getChildrenCount();
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-
-        Toast.makeText(Login.this, ""+k, Toast.LENGTH_LONG).show();
-
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -86,7 +72,9 @@ public class Login extends AppCompatActivity {
                     }
                 }
                 if (flag){
-                    Intent intent = new Intent(Login.this, VideoUpload.class);
+                    mail.setText("");
+                    pass.setText("");
+                    Intent intent = new Intent(Login.this, AdminPage.class);
                     startActivity(intent);
 
                 }

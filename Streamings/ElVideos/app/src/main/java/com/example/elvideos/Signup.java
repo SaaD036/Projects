@@ -96,6 +96,11 @@ public class Signup extends AppCompatActivity {
                     member_database.push().setValue(member);
 
                     Toast.makeText(Signup.this, "Successfully signed up", Toast.LENGTH_LONG).show();
+
+                    mail.setText("");
+                    u_name.setText("");
+                    pass.setText("");
+                    conPass.setText("");
                 }
             }
         });

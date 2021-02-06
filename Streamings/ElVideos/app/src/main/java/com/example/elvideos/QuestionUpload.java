@@ -70,6 +70,13 @@ public class QuestionUpload extends AppCompatActivity {
 
                     databaseReference.push().setValue(tmp);
                     Toast.makeText(QuestionUpload.this, "Quiz added successfully", Toast.LENGTH_LONG).show();
+
+                    ques.setText("");
+                    ans.setText("");
+                    op1.setText("");
+                    op2.setText("");
+                    op3.setText("");
+                    op4.setText("");
                 }
             }
         });
