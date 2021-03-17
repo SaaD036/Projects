@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,8 +23,9 @@ public class View_Room_101 extends AppCompatActivity {
     private TextView username, status, view1, view2, view3, view4;
     private DatabaseReference reff1, reff2, reff3, reff4, reff5;
     private long key;
-    private String eq11, eq22, eq33, eq44, eq55, user, stat;
+    private String eq11, eq22, eq33, eq44, eq55, mail, user, stat, pass, room;
     private Button logout;
+    private ImageButton menu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +34,12 @@ public class View_Room_101 extends AppCompatActivity {
 
         initComp();
 
-        user = getIntent().getStringExtra("username");
-        stat = getIntent().getStringExtra("status");
+        mail = getIntent(). getStringExtra("mail");
+        user = getIntent(). getStringExtra("user");
+        stat = getIntent().getStringExtra("stat");
+        pass = getIntent().getStringExtra("pass");
+        room = getIntent(). getStringExtra("room");
+
         username.setText(user);
         status.setText(stat);
 
@@ -45,6 +51,21 @@ public class View_Room_101 extends AppCompatActivity {
                 Intent intent = new Intent(View_Room_101.this, MainActivity.class);
                 startActivity(intent);
                 Toast.makeText(View_Room_101.this, "Logging out", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(View_Room_101.this, Menu.class);
+
+                intent.putExtra("user", user);
+                intent.putExtra("stat", stat);
+                intent.putExtra("mail", mail);
+                intent.putExtra("pass", pass);
+                intent.putExtra("room", room);
+
+                startActivity(intent);
             }
         });
     }
@@ -59,6 +80,8 @@ public class View_Room_101 extends AppCompatActivity {
         status = (TextView) findViewById(R.id.statusView101);
 
         logout = (Button) findViewById(R.id.logoutButton);
+
+        menu = (ImageButton) findViewById(R.id.viewclass101MenuButton);
 
         reff1 = FirebaseDatabase.getInstance().getReference().child("class101").child("eq1");
         reff2 = FirebaseDatabase.getInstance().getReference().child("class101").child("eq2");

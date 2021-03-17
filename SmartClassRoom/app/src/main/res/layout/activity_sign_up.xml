@@ -6,126 +6,188 @@
     android:layout_height="match_parent"
     tools:context=".SignUp"
     android:orientation="vertical"
-    android:onClick="hideKeyboard">
-
+    android:onClick="hideKeyboard"
+    android:background="@drawable/main_background"
+    android:gravity="center_horizontal">
     <ImageView
-        android:layout_width="120dp"
-        android:layout_height="110dp"
-        android:src="@drawable/signupblue"
-        android:layout_gravity="center"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="-55dp">
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:src="@mipmap/cover"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        android:background="#ffffff">
     </ImageView>
 
     <LinearLayout
-        android:layout_width="330dp"
-        android:layout_height="400dp"
-        android:background="@drawable/signupconf"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_gravity="center">
+        android:gravity="center">
 
         <ImageView
             android:layout_width="120dp"
-            android:layout_height="110dp"
-            android:src="@drawable/signupblue"
+            android:layout_height="120dp"
+            android:src="@mipmap/signup_icon"
             android:layout_gravity="center"
-            android:layout_marginTop="-56dp">
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="-56dp"
+            android:background="@drawable/round_background"
+            android:padding="24dp">
         </ImageView>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:background="@drawable/main_box"
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
+            android:gravity="center_horizontal">
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@mipmap/signup_icon"
+                android:layout_gravity="center"
+                android:layout_marginTop="-63dp"
+                android:background="@drawable/round_background"
+                android:padding="24dp">
+            </ImageView>
+
+            <EditText
+                android:id="@+id/signupMailText"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+
+                android:background="@drawable/input_field_back"
+                android:gravity="center"
+                android:drawableLeft="@drawable/ic_email"
+                android:layout_marginTop="30dp"
+                android:paddingLeft="10dp"
+                android:drawablePadding="-25dp"
+
+                android:hint="Email"
+                android:textColor="#1d70f2"
+                android:textColorHint="#1d70f2"
+                android:textSize="15dp">
+            </EditText>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#0000cc">
+            </LinearLayout>
+            <EditText
+                android:id="@+id/signupUserText"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+
+                android:background="@drawable/input_field_back"
+                android:gravity="center"
+                android:drawableLeft="@drawable/ic_person"
+                android:layout_marginTop="5dp"
+                android:paddingLeft="10dp"
+                android:drawablePadding="-25dp"
+
+                android:hint="Username"
+                android:textColor="#1d70f2"
+                android:textColorHint="#1d70f2"
+                android:textSize="15dp">
+            </EditText>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#0000cc">
+            </LinearLayout>
+            <EditText
+                android:id="@+id/signupPassText"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+
+                android:background="@drawable/input_field_back"
+                android:gravity="center"
+                android:drawableLeft="@drawable/ic_pass"
+                android:layout_marginTop="5dp"
+                android:paddingLeft="10dp"
+                android:drawablePadding="-25dp"
+
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:textColor="#1d70f2"
+                android:textColorHint="#1d70f2"
+                android:textSize="15dp">
+            </EditText>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#0000cc">
+            </LinearLayout>
+            <EditText
+                android:id="@+id/signupConText"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+
+                android:background="@drawable/input_field_back"
+                android:gravity="center"
+                android:drawableLeft="@drawable/ic_pass"
+                android:layout_marginTop="5dp"
+                android:paddingLeft="10dp"
+                android:drawablePadding="-25dp"
+
+                android:hint="Confirm password"
+                android:inputType="textPassword"
+                android:textColor="#1d70f2"
+                android:textColorHint="#1d70f2"
+                android:textSize="15dp">
+            </EditText>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#0000cc">
+            </LinearLayout>
+            <Button
+                android:id="@+id/signupNextButton"
+                android:layout_width="180dp"
+                android:layout_height="50dp"
+
+                android:background="@drawable/loginbutton"
+                android:layout_marginLeft="60dp"
+                android:layout_marginTop="20dp"
+
+                android:text="Next"
+                android:textAllCaps="false"
+                android:textColor="#e3e5e8"
+                android:textSize="16dp">
+            </Button>
+        </LinearLayout>
+
         <TextView
-            android:layout_width="300dp"
-            android:layout_height="80dp"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:text="Sign Up"
-            android:textSize="30dp"
-            android:textColor="#0762f0">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="-20dp"
+            android:drawableRight="@mipmap/click_icon"
+
+            android:text="Already have an account? Click here..."
+            android:textColor="#0000cc"
+            android:textStyle="bold"
+            android:textSize="16dp">
         </TextView>
-
-        <EditText
-            android:id="@+id/signupMailText"
-            android:layout_width="290dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:background="@drawable/login_design"
-            android:hint="Email"
-            android:textColor="#1d70f2"
-            android:textColorHint="#1d70f2"
-            android:gravity="center"
-            android:drawableLeft="@drawable/ic_person"
-            android:layout_marginTop="10dp">
-        </EditText>
-        <EditText
-            android:id="@+id/signupUserText"
-            android:layout_width="290dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:background="@drawable/login_design"
-            android:hint="Username"
-            android:textColor="#1d70f2"
-            android:textColorHint="#1d70f2"
-            android:gravity="center"
-            android:drawableLeft="@drawable/ic_person"
-            android:layout_marginTop="5dp">
-        </EditText>
-        <EditText
-            android:id="@+id/signupPassText"
-            android:layout_width="290dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:background="@drawable/login_design"
-            android:hint="Password"
-            android:textColor="#1d70f2"
-            android:textColorHint="#1d70f2"
-            android:gravity="center"
-            android:drawableLeft="@drawable/ic_pass"
-            android:layout_marginTop="5dp">
-        </EditText>
-        <EditText
-            android:id="@+id/signupConText"
-            android:layout_width="290dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:background="@drawable/login_design"
-            android:hint="Confirm password"
-            android:textColor="#1d70f2"
-            android:textColorHint="#1d70f2"
-            android:gravity="center"
-            android:drawableLeft="@drawable/ic_pass"
-            android:layout_marginTop="5dp">
-        </EditText>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp"
-        android:gravity="center">
-
         <Button
             android:id="@+id/signupLogInButton"
             android:layout_width="150dp"
             android:layout_height="50dp"
+
+            android:background="@drawable/loginbutton"
+            android:layout_marginTop="5dp"
+
             android:text="Login"
             android:textAllCaps="false"
-            android:background="@drawable/loginbutton"
             android:textColor="#e3e5e8"
-            android:textSize="20dp"
-            android:layout_marginRight="20dp"></Button>
-
-        <Button
-            android:id="@+id/signupNextButton"
-            android:layout_width="150dp"
-            android:layout_height="50dp"
-            android:text="Next"
-            android:textAllCaps="false"
-            android:background="@drawable/loginbutton"
-            android:textColor="#e3e5e8"
-            android:textSize="20dp"
-            android:layout_marginLeft="20dp"></Button>
-
+            android:textSize="16dp">
+        </Button>
     </LinearLayout>
-
 
 </LinearLayout>

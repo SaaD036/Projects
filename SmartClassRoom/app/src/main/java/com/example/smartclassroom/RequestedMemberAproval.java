@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
 
-import com.google.firebase.auth.FirebaseAuth;
+
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -19,7 +19,7 @@ import java.util.List;
 public class RequestedMemberAproval extends AppCompatActivity {
     private ListView requested;
     private DatabaseReference reff;
-    private List<Member> memberList;
+    private List<RequestedMember> memberList;
     CustomAdapter customAdapter;
 
     @Override
@@ -29,37 +29,31 @@ public class RequestedMemberAproval extends AppCompatActivity {
 
         initComp();
         customAdapter = new CustomAdapter(RequestedMemberAproval.this, memberList);
-
     }
 
     private void initComp(){
         requested = (ListView) findViewById(R.id.listView);
-
-        reff = FirebaseDatabase.getInstance().getReference("Member");
-
+        reff = FirebaseDatabase.getInstance().getReference("RequestedMember");
         memberList = new ArrayList<>();
     }
 
-    @Override
+   @Override
     protected void onStart() {
-
         reff.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 memberList.clear();
 
                 for(DataSnapshot snapshot : dataSnapshot.getChildren()){
-                    Member member = snapshot.getValue(Member.class);
+                    RequestedMember member = snapshot.getValue(RequestedMember.class);
                     memberList.add(member);
                 }
-
-                requested.setAdapter(customAdapter);
+               requested.setAdapter(customAdapter);
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {}
         });
-
         super.onStart();
     }
 }

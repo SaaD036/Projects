@@ -11,17 +11,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Access_Class_101"></activity>
+        <activity android:name=".EditProfile" />
+        <activity android:name=".Menu" />
         <activity android:name=".SignUp_2" />
         <activity android:name=".SignUp" />
         <activity android:name=".LogIn" />
         <activity android:name=".RequestedMemberAproval" />
         <activity android:name=".Forgot_Pass" />
-        <activity android:name=".ForgotPassword" />
+        <activity android:name=".Access_Class_101" />
         <activity android:name=".View_Room_101" />
         <activity android:name=".ViewClass" />
         <activity android:name=".AccessClass" />
-        <activity android:name=".SignUpCOnfirmation" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

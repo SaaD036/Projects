@@ -62,34 +62,36 @@ public class SignUp extends AppCompatActivity {
                 String user = username.getText().toString().trim();
                 String pass = password.getText().toString();
                 String con_pass = con_password.getText().toString();
+                boolean flag = true;
 
 
                 if(mail.equals("") || user.equals("") || pass.equals("") || con_pass.equals("")){
+                    flag = false;
                     Toast.makeText(SignUp.this, "All info must be provided", Toast.LENGTH_LONG).show();
                 }
 
-                if(!mail.matches(mailPattern)){
+                if(flag && !mail.matches(mailPattern)){
+                    flag = false;
                     Toast.makeText(SignUp.this, "Invalid email", Toast.LENGTH_LONG).show();
                 }
-                if(!pass.equals(con_pass)) {
+                if(flag && !pass.equals(con_pass)) {
+                    flag = false;
                     Toast.makeText(SignUp.this, "Confirm Password", Toast.LENGTH_LONG).show();
                     con_password.setError("Password not match");
                 }
 
-                else{
-                    int flag=0;
-
+                if(flag){
                     for (int i=0; i<memberList.size(); i++){
                         if(memberList.get(i).getEmail().equals(mail)){
-                            flag = 1;
+                            flag = false;
                             break;
                         }
                     }
 
-                    if(flag == 0){
+                    if(flag){
                         Intent intent = new Intent(SignUp.this, SignUp_2.class);
 
-                        intent.putExtra("emailFrom", user);
+                        intent.putExtra("emailFrom", mail);
                         intent.putExtra("usernameFrom", user);
                         intent.putExtra("passwordFrom", pass);
 
@@ -98,12 +100,12 @@ public class SignUp extends AppCompatActivity {
                     else{
                         Toast.makeText(SignUp.this, "Account associated with this email already exists", Toast.LENGTH_LONG).show();
                     }
+                    email.setText("");
+                    username.setText("");
+                    password.setText("");
+                    con_password.setText("");
                 }
 
-                email.setText("");
-                username.setText("");
-                password.setText("");
-                con_password.setText("");
             }
         });
 
@@ -116,7 +118,7 @@ public class SignUp extends AppCompatActivity {
         });
     }
 
-    private void initComp() {
+   private void initComp() {
         email = (EditText) findViewById(R.id.signupMailText);
         username = (EditText) findViewById(R.id.signupUserText);
         password = (EditText) findViewById(R.id.signupPassText);

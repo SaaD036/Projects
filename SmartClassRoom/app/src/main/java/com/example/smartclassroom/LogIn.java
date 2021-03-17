@@ -20,12 +20,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LogIn extends AppCompatActivity {
-    private EditText email, pass;
+    private EditText email, password;
     private Button login, signup;
     private TextView forgotPass;
     private DatabaseReference reff;
-    private String mail, password;
-    private String username, mist_id, status;
+    private String mail, pass, user, stat, room;
     private Long key;
     private List<Member> memberList;
 
@@ -60,81 +59,55 @@ public class LogIn extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 mail = email.getText().toString();
-                password = pass.getText().toString();
+                pass = password.getText().toString();
                 int sizee = memberList.size(), flag = 0;
 
                 for (int i = 0; i < sizee; i++) {
-
                     if (memberList.get(i).getEmail().equals(mail)) {
-
-                        if (memberList.get(i).getPass().equals(password)) {
-                            username = memberList.get(i).getUser();
-                            mist_id = memberList.get(i).getStatus();
+                        if (memberList.get(i).getPass().equals(pass)) {
+                            user = memberList.get(i).getUser();
+                            stat = memberList.get(i).getStatus();
+                            room = memberList.get(i).getRoom();
 
                             flag = 2;
-                        } else {
-                            flag = 1;
                         }
+                        else { flag = 1; }
                         break;
                     }
                 }
 
                 if (flag == 0) {
                     Toast.makeText(LogIn.this, "No account", Toast.LENGTH_LONG).show();
-                } else if (flag == 1) {
-                    /*if (mist_id.equals("Student")) {
-                        firebaseAuth.signInWithEmailAndPassword(mail, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                if (task.isSuccessful()) {
-                                    Intent intent = new Intent(MainActivity.this, ViewClass.class);
+                }
 
-                                    intent.putExtra("username", username);
-                                    intent.putExtra("status", mist_id);
-
-                                    startActivity(intent);
-                                }
-                                else{
-                                    Toast.makeText(MainActivity.this, "Wrong password", Toast.LENGTH_LONG).show();
-                                }
-                            }
-                        });
-                    }
-                    else{
-                        firebaseAuth.signInWithEmailAndPassword(mail, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                if(task.isSuccessful()){
-                                    Intent intent = new Intent(MainActivity.this, AccessClass.class);
-
-                                    intent.putExtra("username", username);
-                                    intent.putExtra("status", mist_id);
-
-                                    startActivity(intent);
-                                }
-                            }
-                        });
-                    }*/
+                else if (flag == 1) {
                     Toast.makeText(LogIn.this, "Wrong Password", Toast.LENGTH_LONG).show();
-                    //Toast.makeText(MainActivity.this, "Logging in as "+username, Toast.LENGTH_LONG).show();
-                } else if (flag == 2) {
-                    if (mist_id.equals("Student")) {
-                        Intent intent = new Intent(LogIn.this, ViewClass.class);
+                }
 
-                        intent.putExtra("username", username);
-                        intent.putExtra("status", mist_id);
-
-                        startActivity(intent);
-                    } else {
+                else if (flag == 2) {
+                    if (stat.equals("Teacher")) {
                         Intent intent = new Intent(LogIn.this, AccessClass.class);
 
-                        intent.putExtra("username", username);
-                        intent.putExtra("status", mist_id);
+                        intent.putExtra("user", user);
+                        intent.putExtra("stat", stat);
+                        intent.putExtra("mail", mail);
+                        intent.putExtra("pass", pass);
+                        intent.putExtra("room", room);
+
+                        startActivity(intent);
+                    }
+                    else{
+                        Intent intent = new Intent(LogIn.this, ViewClass.class);
+
+                        intent.putExtra("user", user);
+                        intent.putExtra("stat", stat);
+                        intent.putExtra("mail", mail);
+                        intent.putExtra("pass", pass);
+                        intent.putExtra("room", room);
 
                         startActivity(intent);
                     }
                 }
-                //Toast.makeText(MainActivity.this, key+" "+memberList.size(), Toast.LENGTH_LONG).show();
             }
         });
 
@@ -150,7 +123,7 @@ public class LogIn extends AppCompatActivity {
         forgotPass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LogIn.this, RequestedMemberAproval.class);
+                Intent intent = new Intent(LogIn.this, Forgot_Pass.class);
                 startActivity(intent);
             }
         });
@@ -159,7 +132,7 @@ public class LogIn extends AppCompatActivity {
     private void initComp() {
         //Initializing EditText
         email = (EditText)findViewById(R.id.emailText);
-        pass = (EditText)findViewById(R.id.passwordText);
+        password = (EditText)findViewById(R.id.passwordText);
 
         forgotPass = (TextView) findViewById(R.id.mainActivityForgotPassword);
 

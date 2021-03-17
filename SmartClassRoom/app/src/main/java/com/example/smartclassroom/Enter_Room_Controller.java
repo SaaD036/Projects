@@ -4,10 +4,8 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
+import android.view.*;
+import android.widget.*;
 
 import androidx.appcompat.app.AppCompatDialogFragment;
 
@@ -20,19 +18,20 @@ public class Enter_Room_Controller extends AppCompatDialogFragment {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
         LayoutInflater inflater = getActivity().getLayoutInflater();
-        View view=  inflater.inflate(R.layout.enter_room, null);
+        final View view=  inflater.inflate(R.layout.enter_room, null);
 
         builder.setView(view).setTitle("Enter Room Number : ").setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {}
         }).setPositiveButton("Ok", new DialogInterface.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialog, int which) {}
+            public void onClick(DialogInterface dialog, int which) {
+                room_number = view.findViewById(R.id.enter_room_roomText);
+            }
         });
 
         room_number = view.findViewById(R.id.enter_room_roomText);
         enter = view.findViewById(R.id.enter_room_enterButton);
-
 
         return builder.create();
     }
